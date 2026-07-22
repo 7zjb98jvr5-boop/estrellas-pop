@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minijuegos Pop</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:center;
+}
+
+/* FONDO */
+body{
+    background:linear-gradient(
+    270deg,
+    #000000,
+    #4b0082,
+    #ff1493,
+    #000000);
+
+    background-size:600% 600%;
+
+    animation:fondo 10s ease infinite;
+}
+
+@keyframes fondo{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+h1{
+    font-size:60px;
+
+    text-shadow:
+    0 0 10px hotpink,
+    0 0 20px hotpink,
+    0 0 40px purple;
+}
+
+.juego{
+
+    margin:40px auto;
+
+    max-width:700px;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px hotpink;
+}
+
+button{
+
+    padding:12px 20px;
+
+    margin:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:hotpink;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+button:hover{
+    background:purple;
+}
+
+/* CARTAS */
+.cartas{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.carta{
+    width:120px;
+    height:160px;
+    background:hotpink;
+    border-radius:15px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    transition:0.5s;
+}
+
+.carta:hover{
+    transform:rotateY(180deg);
+    background:purple;
+}
+
+img{
+    width:250px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.volver{
+    display:inline-block;
+    margin:40px;
+    padding:15px 30px;
+    background:hotpink;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🕹️ Minijuegos Pop</h1>
+
+<!-- 2. TRIVIA -->
+<div class="juego">
+
+<h2>🧠 Trivia Pop</h2>
+
+<p>¿Quién es conocida como la Reina del Pop?</p>
+
+<button onclick="alert('🎉 Correcto')">
+Madonna
+</button>
+
+<button onclick="alert('❌ Incorrecto')">
+Beyoncé
+</button>
+
+<button onclick="alert('❌ Incorrecto')">
+Lady Gaga
+</button>
+
+</div>
+
+<!-- 4. LOOK -->
+<div class="juego">
+
+<h2>🌈 ¿De qué era es este look?</h2>
+
+<img src="imagenes/gaga1.jpg">
+
+<p>¿De qué época es este look?</p>
+
+<button onclick="alert('🎉 Correcto')">
+2010s
+</button>
+
+<button onclick="alert('❌ Incorrecto')">
+1980s
+</button>
+
+<button onclick="alert('❌ Incorrecto')">
+2000s
+</button>
+
+</div>
+
+<!-- 5. QUE DIVA ERES -->
+<div class="juego">
+
+<h2>✨ ¿Qué diva pop eres?</h2>
+
+<p>¿Qué estilo prefieres?</p>
+
+<button onclick="mostrarResultado('Lady Gaga 🎤')">
+Extravagante
+</button>
+
+<button onclick="mostrarResultado('Beyoncé 🐝')">
+Elegante
+</button>
+
+<button onclick="mostrarResultado('Madonna 👑')">
+Clásico
+</button>
+
+<p id="resultado"></p>
+
+</div>
+
+<!-- 6. ATRAPA NOTAS -->
+<div class="juego">
+
+<h2>🎵 Atrapa las Notas</h2>
+
+<p>
+Mueve el mouse y atrapa las notas musicales ✨
+</p>
+
+</div>
+
+<!-- 7. RANKING -->
+<div class="juego">
+
+<h2>👑 Ranking de Divas</h2>
+
+<button onclick="votar('Lady Gaga')">
+Lady Gaga
+</button>
+
+<button onclick="votar('Beyoncé')">
+Beyoncé
+</button>
+
+<button onclick="votar('Madonna')">
+Madonna
+</button>
+
+<p id="ganadora"></p>
+
+</div>
+
+<!-- 8. COMPLETA LA LETRA -->
+<div class="juego">
+
+<h2>🎧 Completa la Letra</h2>
+
+<p>
+Rah-rah-ah-ah-ah...
+</p>
+
+<button onclick="alert('🎉 Correcto')">
+Roma-roma-ma
+</button>
+
+<button onclick="alert('❌ Incorrecto')">
+Na-na-na
+</button>
+
+</div>
+
+<a href="biblioteca.html" class="volver">
+⬅ Volver
+</a>
+
+<script>
+
+function mostrarResultado(diva){
+
+    document.getElementById("resultado").innerHTML =
+    "✨ Eres " + diva;
+
+}
+
+function votar(diva){
+
+    document.getElementById("ganadora").innerHTML =
+    "👑 La diva elegida es: " + diva;
+
+}
+
+/* NOTAS MUSICALES */
+document.addEventListener("mousemove", function(e){
+
+    let nota = document.createElement("div");
+
+    nota.innerHTML = "🎵";
+
+    nota.style.position = "fixed";
+
+    nota.style.left = e.clientX + "px";
+
+    nota.style.top = e.clientY + "px";
+
+    nota.style.fontSize = "25px";
+
+    nota.style.pointerEvents = "none";
+
+    nota.style.animation = "desaparecer 1s forwards";
+
+    document.body.appendChild(nota);
+
+    setTimeout(() => {
+        nota.remove();
+    }, 1000);
+
+});
+
+</script>
+
+</body>
+</html>

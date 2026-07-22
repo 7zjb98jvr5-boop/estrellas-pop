@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Estrellas Mundiales del POP</title> 	<!-- coloca titulos a la página -->
+	
+	<link rel="stylesheet" href="css/style.css"> <!-- llama el archivo style.css que esta carpeta css -->
+
+	
+</head>
+
+<body>
+	
+
+	<div class="contenedor">
+	<header class= "encabezado">
+			<!-- llamar imagenes --> 
+		<marquee>Bienvenidos a la pagina web de Estrellas del Pop</marquee>	<!-- poner marquesina -->
+		<h1> FEMALE POP ARTISTS</h1> 	<!-- titulo 1 -->
+
+
+	<div class="slider">
+		<div class="slides">
+		<div class="slide">	
+		<img src="imagenes/pop1990.png"> </div>
+		<div class="slide"> 
+		<img src="imagenes/2000s.png"> </div>
+		<div class="slide">
+		<img src="imagenes/2010s.png"></div>
+		<div class="slide">
+		<img src="imagenes/2020s.png"></div>
+	</div>
+		
+		<button class="prev">&#10094;</button>
+		<button class="next">&#10095;</button>
+	</div>
+
+	<script>
+		let index = 0;
+		const slides = document.querySelector(".slides");
+		const total = document.querySelectorAll(".slide").length;
+		document.querySelector(".next").onclick = function(){
+		index++;
+		if(index >= total){
+		index = 0;
+		}
+		slides.style.transform = "translateX(-"+index*100+"%)";
+		}
+		document.querySelector(".prev").onclick = function(){
+		index--;
+		if(index < 0){
+		index = total-1;
+		}
+		slides.style.transform = "translateX(-"+index*100+"%)";
+		}
+		</script>	
+		</header>
+
+		<!-- codigo de listas y el menu con hiperviculos a otras paginas con extension html y php, css con #-->
+		<nav class="menu1">   
+			<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="biblioteca.html">Biblioteca de Reproduccion</a></li>
+			<li><a href="contactos.html">Contactos</a></li>
+			
+			</ul>
+		</nav>
+
+		<main class="contenido">
+			<section id="inicio">
+			<h2>Bienvenidos a todos</h2>
+			<p>La evolución del pop femenino a nivel mundial muestra cómo distintas generaciones de artistas han transformado la música, la imagen y el papel de la mujer en la industria.
+
+En los años 80 y 90, figuras como Madonna y Janet Jackson rompieron esquemas con su estilo, coreografías y mensajes de empoderamiento, mientras Mariah Carey destacó por su potencia vocal.
+
+En los 2000, el pop vivió su auge global con Britney Spears y Christina Aguilera, junto al crecimiento de grandes figuras como Beyoncé, quien se convirtió en un ícono del espectáculo y el empoderamiento.
+
+También en esta etapa, Shakira llevó el pop latino al mundo, mientras Rihanna y Lady Gaga innovaron con estilos versátiles y propuestas artísticas únicas.
+
+En la década de 2010, artistas como Taylor Swift y Adele dominaron con letras más personales y emotivas. A la vez, Ariana Grande y Billie Eilish marcaron nuevas tendencias en la era digital.
+
+Hoy en día, el pop sigue evolucionando con artistas como Dua Lipa, Sabrina Carpenter y Doja Cat, quienes mezclan estilos, redes sociales y nuevas formas de expresión.
+
+En resumen, el pop femenino ha pasado de la provocación y el espectáculo a la diversidad, la creatividad y la libertad artística global.
+</p>
+			</section>
+		
+		
+
+		<input type="number" id="n1">
+		<input type="number" id="n2">
+		<button onclick="sumar()">Sumar</button>
+
+		<p id="resultado"></p>
+
+		</main>
+
+	<aside class="lateral">
+		<h3>VIDEO</h3>
+		<p>Uno de los videos musicales mas polemicos e historicos en el Pop, ya que una de las artistas mas grandes al nivel global, hizo una colabracion con la artista Latina mas grande de todos los tiempos</p>
+		<center> <video width="640" height="360" controls>
+	    <source src="imagenes/beyonceyshakira.mp4" type="video/mp4"></video>
+	 </aside>
+
+	<footer>
+		<center><p>Institución Educativa Técnica de Firavitoba </p></center>
+
+		<center><h6> Juan David Ninco Rojas Grado 10.01</h6></center>
+
+		<center><h6> Sara Valentina Sanabria Rico  Grado 10.01</h6></center>
+
+		
+			<script>
+		function sumar(){
+		    let a = parseInt(document.getElementById("n1").value);
+		    let b = parseInt(document.getElementById("n2").value);
+		    document.getElementById("resultado").innerHTML = a + b;
+		}
+		</script>
+
+
+
+</body>
+</body>
+</html>
+</body>
+</html>
+
+
+
+

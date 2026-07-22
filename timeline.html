@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Línea del Tiempo</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:center;
+}
+
+/* FONDO */
+body{
+    background:linear-gradient(
+    270deg,
+    #000000,
+    #4b0082,
+    #ff1493,
+    #000000);
+
+    background-size:600% 600%;
+
+    animation:fondo 10s ease infinite;
+}
+
+@keyframes fondo{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+/* CONTENIDO */
+.contenedor{
+    padding:60px 20px;
+}
+
+h1{
+    font-size:60px;
+    color:white;
+
+    text-shadow:
+    0 0 10px hotpink,
+    0 0 20px hotpink,
+    0 0 40px purple;
+}
+
+.bloque{
+    margin:40px auto;
+    max-width:700px;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px hotpink;
+}
+
+.bloque h2{
+    color:hotpink;
+}
+
+.bloque p{
+    font-size:20px;
+}
+
+/* BOTON */
+.volver{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    background:hotpink;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:0.3s;
+}
+
+.volver:hover{
+    background:purple;
+    transform:scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>🌟 Evolución del Pop Femenino</h1>
+
+<div class="bloque">
+<h2>1980s - Madonna 👑</h2>
+<p>
+Madonna revolucionó el pop femenino con su estilo atrevido,
+la moda y éxitos que marcaron generaciones.
+</p>
+</div>
+
+<div class="bloque">
+<h2>2000s - Beyoncé 🐝</h2>
+<p>
+Beyoncé se convirtió en una de las artistas más influyentes
+del mundo gracias a su poderosa voz y espectáculos.
+</p>
+</div>
+
+<div class="bloque">
+<h2>2010s - Lady Gaga 🎤</h2>
+<p>
+Lady Gaga transformó el pop con creatividad,
+performance y una identidad artística única.
+</p>
+</div>
+
+<div class="bloque">
+<h2>Actualidad - Sabrina Carpenter 🌸</h2>
+<p>
+Sabrina Carpenter representa la nueva generación
+del pop moderno.
+</p>
+</div>
+
+<a href="biblioteca.html" class="volver">
+⬅ Volver
+</a>
+
+</div>
+
+</body>
+</html>
